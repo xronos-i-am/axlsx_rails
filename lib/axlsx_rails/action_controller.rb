@@ -49,7 +49,7 @@ ActionController::Renderers.add :xlsx do |filename, options|
     file_name = "#{filename.gsub(/^.*\//,'')}.xlsx"
   end
 
-  send_data render_to_string(options), :filename => file_name, :type => Mime::XLSX, :disposition => disposition
+  send_data render_to_string(options).b, :filename => file_name, :type => Mime::XLSX, :disposition => disposition
 end
 
 # For respond_to default
